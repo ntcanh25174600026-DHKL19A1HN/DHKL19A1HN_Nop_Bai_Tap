@@ -1,0 +1,106 @@
+# Bài 1
+git clone https://github.com/le-van-an/191133100062_Le_Van_An_bai_tap.git
+cd 191133100062_Le_Van_An_bai_tap
+
+# Bài 2
+echo "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur, eros at
+lacinia suscipit, magna turpis aliquam est, sit amet aliquam quam libero id mi. Ut vel
+placerat risus. Sed tempor in ex vitae sodales. Donec et tempor orci. In pharetra
+viverra sagittis. Vestibulum risus ante, molestie ac eros efficitur, bibendum tincidunt
+turpis. In sit amet tortor gravida, ultricies ante vitae, varius tortor. Aliquam finibus
+porta nulla sed gravida. Aliquam ultricies dapibus ante eget molestie. In hac habitasse
+platea dictumst. Aliquam aliquam enim at massa pharetra, et vestibulum sapien
+consequat. Donec accumsan quis metus at pellentesque. Morbi quis felis placerat,
+interdum justo a, aliquam risus." > README.md
+git add README.md
+git commit -m "Update README.md with Lorem ipsum text"
+git push origin main
+
+# Bài 3
+git checkout -b branch_1 main
+echo "Lorem ipsum dolor sit amet, consectetur adipiscing elit." > text_branch_1.txt
+git add text_branch_1.txt
+git commit -m "Add text_branch_1.txt in branch_1"
+git push origin branch_1
+
+git checkout -b branch_2 main
+echo "Praesent ullamcorper orci eu erat placerat sodales." > text_branch_2.txt
+git add text_branch_2.txt
+git commit -m "Add text_branch_2.txt in branch_2"
+git push origin branch_2
+
+git checkout -b branch_3 main
+echo "Integer sit amet nisi aliquam, tempor libero quis, cursus erat." > text_branch_3.txt
+git add text_branch_3.txt
+git commit -m "Add text_branch_3.txt in branch_3"
+git push origin branch_3
+
+git checkout -b branch_4 main
+echo -e "Học phần: Tin cơ sở cho ngành KHDL\n\nGiảng viên: Lê Hằng Anh\n\nCras ac mi nec nisi porta ultrices sed non ante." > text_branch_4.txt
+git add text_branch_4.txt
+git commit -m "Add text_branch_4.txt in branch_4"
+git push origin branch_4
+
+# Bài 4
+git branch -d branch_4
+git branch -l
+git fetch origin
+git branch -r
+
+# Bài 5
+git pull origin main
+
+# Bài 6
+git checkout main
+mkdir main_folder
+touch main_folder/main_txt_1.txt main_folder/main_txt_2.txt main_folder/main_txt_3.txt
+git add main_folder
+git commit -m "Add main_folder with 3 text files"
+git push origin main
+
+git pull origin branch_1
+git pull origin branch_2
+git pull origin branch_3
+git pull origin branch_4
+
+# Bài 7
+git checkout -b branch_5 branch_1
+echo "Etiam malesuada felis nulla, ac porta dui sollicitudin eget. Mauris hendrerit non
+metus eget pellentesque. Etiam ornare ante at pretium hendrerit. Proin molestie
+accumsan sapien, ac finibus libero lobortis quis. Praesent ac commodo eros. Nullam
+malesuada v el dui nec feugiat. Cras justo ipsum, scelerisque et elit vitae, porttitor
+tristique turpis. Nam ut hendrerit est. Nulla sed tincidunt nibh. Class aptent taciti
+sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque vitae
+egestas lacus. Phasellus turpis ante, euismod quis pellentesque et, pharetra id ligula.
+Vestibulum mattis sem ac ligula auctor viverra. Phasellus dignissim mollis leo, vitae
+tristique enim." > text_branch_1.txt
+git add text_branch_1.txt
+git commit -m "Update text_branch_1.txt in branch_5"
+git push origin branch_5
+
+# Thực hiện Pull Request, xử lý conflict trên GitHub, rồi xóa branch_5
+
+git branch -d branch_5
+
+# Bài 8
+git checkout main
+git pull origin main
+git merge origin/branch_1 -m "Merge branch_1 into main"
+git push origin main
+git merge origin/branch_2 -m "Merge branch_2 into main"
+git push origin main
+git merge origin/branch_3 -m "Merge branch_3 into main"
+git push origin main
+git merge origin/branch_4 -m "Merge branch_4 into main"
+git push origin main
+
+# Bài 9
+git branch -d branch_2
+git branch -d branch_3
+git branch -d branch_4
+git push origin --delete branch_2
+git push origin --delete branch_3
+git push origin --delete branch_4
+git checkout branch_1
+git pull origin main
+git push origin branch_1
